@@ -13,10 +13,6 @@ typedef struct Livro* pLivro;
 
 pLivro livro_aloc(int qtde) {
     pLivro livros = (pLivro)malloc(qtde * sizeof(struct Livro));
-    if (livros == NULL) {
-        printf("Erro ao alocar memória\n");
-        exit(1); 
-    }
     return livros;
 }
 
@@ -25,30 +21,16 @@ void livro_ler(pLivro livros, int qtde) {
         printf("\nLivro %d:\n", i + 1);
         
         livros[i].nome = (char *)malloc(100 * sizeof(char));
-        if (livros[i].nome == NULL) {
-            printf("Erro ao alocar memória para o nome do livro.\n");
-            exit(1);
-        }
 
-        printf("Digite o nome do livro: ");
         scanf(" %[^\n]s", livros[i].nome);
-
-        printf("Digite o ISBN: ");
         scanf(" %s", livros[i].isbn);
-
-        printf("Digite o preço do livro: ");
         scanf("%f", &livros[i].preco);
-
-        printf("Digite o score: ");
         scanf("%d", &livros[i].score);
-
-        printf("Digite a editora: ");
         scanf(" %[^\n]s", livros[i].editora);
     }
 }
 
 void livro_exibe(pLivro livros, int qtde) {
-    printf("\n=== Dados dos Livros ===\n");
     for (int i = 0; i < qtde; i++) {
         printf("Livro %d:\n", i + 1);
         printf("Nome: %s\n", livros[i].nome);
