@@ -51,8 +51,6 @@ void livro_desaloca(pLivro livros, int qtde) {
 
 int main() {
     int qtde;
-
-    printf("Digite a quantidade de livros: ");
     scanf("%d", &qtde);
 
     pLivro livros = livro_aloc(qtde);
