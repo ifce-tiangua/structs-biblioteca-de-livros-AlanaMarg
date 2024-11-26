@@ -35,7 +35,7 @@ void livro_exibe(pLivro livros, int qtde) {
         printf("Livro %d:\n", i + 1);
         printf("Nome: %s\n", livros[i].nome);
         printf("ISBN: %s\n", livros[i].isbn);
-        printf("Preço: %.2f\n", livros[i].preco);
+        printf("Preço: R$ %.2f\n", livros[i].preco);
         printf("Score: %d\n", livros[i].score);
         printf("Editora: %s\n", livros[i].editora);
         printf("\n");
