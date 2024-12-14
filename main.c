@@ -38,7 +38,6 @@ int main() {
 pLivro livro_aloc(int qtde) {
     pLivro livros = (pLivro)malloc(qtde * sizeof(tLivro)); //aloca a qntde de livros
     if(livros == NULL) {
-        printf("Erro ao alocar a quantidade de livros.\n");
         exit (1);
     }
     return livros; //retorna o ponteiro
@@ -53,7 +52,6 @@ void livro_ler(pLivro livros, int qtde) {
         getchar(); 
         livros[i].nome = (char*)malloc((strlen(buffer) + 1) * sizeof(char)); //aloca a memoria para o nome do livro
         if(livros[i].nome == NULL) {
-            printf("Erro ao alocar memoria para o nome do livro.\n");
             exit(1);
         }
         strcpy(livros[i].nome, buffer);
@@ -63,7 +61,7 @@ void livro_ler(pLivro livros, int qtde) {
         getchar();
         livros[i].isbn = (char*)malloc((strlen(buffer) + 1) * sizeof(char));
         if(livros[i].isbn == NULL) {
-            printf("Erro ao alocar memoria para o ISBN.\n");
+            exit (1);
         }
         strcpy(livros[i].isbn, buffer);
 
@@ -79,7 +77,6 @@ void livro_ler(pLivro livros, int qtde) {
         getchar();
         livros[i].editora = (char*)malloc((strlen(buffer) + 1) * sizeof(char));
         if(livros[i].editora == NULL) {
-            printf("Erro ao alocar memoria para a editora do livro.\n");
             exit(1);
         }
         strcpy(livros[i].editora, buffer);
